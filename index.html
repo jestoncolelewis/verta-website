@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
     <title>VERTA Safety</title>
 </head>
 <body>
@@ -14,8 +15,8 @@
         <h1>We help you keep your community safe</h1>
         <div id="hero-subtitle">An app that alerts your community of oncoming emergency vehicles.</div>
         <form id="hero-form">
-            <input type="email"><br>
-            <input type="button" value="Sign up for the beta">
+            <input type="email" id="hero-email" placeholder="email@test.com"><br>
+            <button type="button" id="hero-button" onclick="retrieve('hero-email')">Sign up for the beta</button>
         </form>
     </div>
     <!--Features & Objections-->
@@ -51,8 +52,8 @@
     <div class="cta2">
         <h2 id="cta2-headline">Join us in making your streets safer</h2>
         <form>
-            <input type="email">
-            <input type="button" value="JOIN THE BETA">
+            <input type="email" id="cta-email" placeholder="email@test.com">
+            <button type="button" id="cta-button" onclick="retrieve('cta-email')">JOIN THE BETA</button>
         </form>
     </div>
     <!--Footer-->
