@@ -1,12 +1,25 @@
+import os
 from funtions import *
 
 name = 'verta-forms'
 
+key = 'index.py'
 
-build_s3()
+path = os.getcwd()
+path = path + '/' + key
 
-build_lambda()
+build_s3(name, path, key)
 
-build_api()
+language = 'python3.9'
+
+role = ''
+
+code = ['', '']
+
+description = ''
+
+target = build_lambda(name, language, role, code, description)
+
+build_api(name, target)
 
 build_ses()
