@@ -42,15 +42,21 @@ def build_lambda(name, lang, role, code, desc):
         response = lamb.get_function(FunctionName = name)
         return response['Configuration']['FunctionArn']
 
-def build_api(name):
+def build_api(name, target):
     try:
-        return 'Success'
+        api.creat_api(
+            Name = name,
+            ProtocolType = 'HTTP',
+            CorsConfiguration = {
+                'AllowOrigins': ['*']
+            },
+            Target = target
+        )
     except botocore.exceptions('ClientError') as err:
-        return err
+        print('{}'.format(err.response['Error']['Message']))
 
 def build_ses():
     try:
         ses.create_email(EmailIdentity = 'email')
-        return
     except botocore.exceptions('ClientError') as err:
-        return err
+        print('{}'.format(err.response['Error']['Message']))
