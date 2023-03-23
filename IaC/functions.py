@@ -5,16 +5,29 @@ s3 = boto3.client('s3')
 s3r = boto3.resource('s3')
 lamb = boto3.client('lambda')
 api = boto3.client('api')
-ses = boto3.client('ses')
+ses = boto3.client('sesv2')
 
 def build_s3():
-    return
+    try:
+        return 'Success'
+    except botocore.exceptions('ClientError') as err:
+        return err
 
 def build_lambda():
-    return
+    try:
+        return 'Success'
+    except botocore.exceptions('ClientError') as err:
+        return err
 
 def build_api():
-    return
+    try:
+        return 'Success'
+    except botocore.exceptions('ClientError') as err:
+        return err
 
 def build_ses():
-    return
+    try:
+        ses.create_email(EmailIdentity = 'email')
+        return
+    except botocore.exceptions('ClientError') as err:
+        return err
