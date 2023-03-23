@@ -13,9 +13,9 @@ function retrieve(id) {
     })
     .then((response) => response.json())
     .then((data) => {
-        console.log('Success:', data );
+        alert('Successfully submitted, we\'ll be in touch!');
     })
     .catch((error) => {
-        console.log('Error:', error);
+        alert('Please try again.');
     })
 }
