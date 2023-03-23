@@ -23,11 +23,24 @@ def build_s3(name, path, key):
     file = objects[3][1][0].get('Key')
     return file
 
-def build_lambda(name):
+def build_lambda(name, lang, role, code, desc):
     try:
-        return 'Success'
+        response = lamb.create_function(
+            Runtime = lang,
+            Role = role,
+            Code = {
+                'S3Bucket': code[0],
+                'S3Key': code[1]
+            },
+            Description = desc,
+            FunctionName = name,
+            Handler = 'index.send'
+        )
+        return response.get('FunctionArn')
     except botocore.exceptions('ClientError') as err:
-        return err
+        print('{}'.format(err.response['Error']['Message']))
+        response = lamb.get_function(FunctionName = name)
+        return response['Configuration']['FunctionArn']
 
 def build_api(name):
     try:
