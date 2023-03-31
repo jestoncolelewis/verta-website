@@ -5,58 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
     <title>VERTA Safety</title>
 </head>
 <body>
     <!--Header with image, title, and cta-->
-    <div class="header">
+    <header class="header">
         <img class="logo" src="./assets/VERTA LOGO.png" alt="VERTA Safety logo">
         <h1>We help you keep your community safe</h1>
         <div id="hero-subtitle">An app that alerts your community of oncoming emergency vehicles.</div>
         <form id="hero-form">
-            <input type="email"><br>
-            <input type="button" value="Sign up for the beta">
+            <input type="email" id="hero-email" placeholder="email@test.com"><br>
+            <button type="button" id="hero-button" onclick="retrieve('hero-email')">Sign up for the beta</button>
         </form>
-    </div>
+    </header>
     <!--Features & Objections-->
-    <div class="features">
-        <h2>Features</h2>
-        <div class="features-right">
-            <div>
-                <h3>Alert the public of oncoming emergency vehicles</h3>
-                <p>A large percentage of surveyed drivers feel confused about what to do when they hear an emergency vehicle approaching. Using VERTA, drivers are given more time to make room. As soon as an emergency vehicle rolls Code 3, an alert will be sent to the public.</p>
+    <main>
+        <div class="features">
+            <h2>Features</h2>
+            <div class="features-right">
+                <div>
+                    <h3>Alert the public of oncoming emergency vehicles</h3>
+                    <p>A large percentage of surveyed drivers feel confused about what to do when they hear an emergency vehicle approaching. Using VERTA, drivers are given more time to make room. As soon as an emergency vehicle rolls Code 3, an alert will be sent to the public.</p>
+                </div>
+                <img class="feature-image" src="./assets/car-crash.jpeg" alt="car crash">
             </div>
-            <img class="feature-image" src="./assets/car-crash.jpeg" alt="car crash">
-        </div>
-        <div class="features-left">
-            <img class="feature-image" src="./assets/cop-car-crash.jpeg" alt="cop car crash">
-            <div>
-                <h3>Real time fleet tracking & analysis</h3>
-                <p>Coordination can be a huge issue and cause crashes. Through the administrative portal, all fleet vehicles can be tracked and properly deployed to where they can make the most difference. </p>
+            <div class="features-left">
+                <img class="feature-image" src="./assets/cop-car-crash.jpeg" alt="cop car crash">
+                <div>
+                    <h3>Real time fleet tracking & analysis</h3>
+                    <p>Coordination can be a huge issue and cause crashes. Through the administrative portal, all fleet vehicles can be tracked and properly deployed to where they can make the most difference. </p>
+                </div>
             </div>
         </div>
-    </div>
-    <!--FAQ-->
-    <div class="faq">
-        <h2>F.A.Q.</h2>
-        <div>
-            <h3>What is the timeline for the beta?</h3>
-            <p>We are currently still in development of the prototypes of the application. Regular updates will be provided to those that express interest in the program.</p>
-        </div><div>
-            <h3>What size departments are we looking to have in the beta?</h3>
-            <p>We are currently looking for small to medium sized police, fire, and paramedic departments to test the stability and functionality of VERTA.</p>
+        <!--FAQ-->
+        <div class="faq">
+            <h2>F.A.Q.</h2>
+            <div>
+                <h3>What is the timeline for the beta?</h3>
+                <p>We are currently still in development of the prototypes of the application. Regular updates will be provided to those that express interest in the program.</p>
+            </div><div>
+                <h3>What size departments are we looking to have in the beta?</h3>
+                <p>We are currently looking for small to medium sized police, fire, and paramedic departments to test the stability and functionality of VERTA.</p>
+            </div>
         </div>
-    </div>
-    <!--2nd CTA-->
-    <div class="cta2">
-        <h2 id="cta2-headline">Join us in making your streets safer</h2>
-        <form>
-            <input type="email">
-            <input type="button" value="JOIN THE BETA">
-        </form>
-    </div>
+        <!--2nd CTA-->
+        <div class="cta2">
+            <h2 id="cta2-headline">Join us in making your streets safer</h2>
+            <form>
+                <input type="email" id="cta-email" placeholder="email@test.com">
+                <button type="button" id="cta-button" onclick="retrieve('cta-email')">JOIN THE BETA</button>
+            </form>
+        </div>
+    </main>
     <!--Footer-->
-    <div class="footer">
+    <footer class="footer">
         <img class="logo" src="./assets/VERTA LOGO.png" alt="VERTA Safety logo">
         <h4>VERTA Safety, LLC</h4>
         <div>
@@ -65,7 +68,7 @@
             <img class="social-icon" src="./assets/twitter-logo.svg" alt="twitter">
             <img class="social-icon" src="./assets/linkedin-logo.svg" alt="linkedin">
         </div>
-    </div>
+    </footer>
     <!--Founders Note-->
     <div class="founder">
         <h2>Founder's Note</h2>
