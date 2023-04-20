@@ -1,5 +1,5 @@
 import os
-from funtions import *
+from functions import *
 
 name = 'verta-forms'
 
