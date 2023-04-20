@@ -8,7 +8,7 @@ def send(event, context):
     replyto = body['email']
     response = ses.send_email(
         FromEmailAddress = 'web@vertasafety.com',
-        FromEmailAddressIdentityArn = '',
+        FromEmailAddressIdentityArn = '', # still need this
         Destination = {'ToAddresses': ['info@vertasafety.com']},
         ReplyToAddresses = [replyto],
         Content = {
