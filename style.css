@@ -7,24 +7,24 @@ body {
 }
 
 p {
-    font-size: 18px;
+    font-size: 1em;
 }
 
 h1 {
-    font-size: 70px;
+    font-size: 3em;
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 2em;
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 1.5em;
     font-weight: 500;
 }
 
 h4 {
-    font-size: 20px;
+    font-size: 1.1em;
     font-weight: 500;
 }
 
@@ -145,9 +145,16 @@ button {
 }
 
 @media screen and (max-width: 899px) {
-    
+    .header, .features, .faq {
+        padding: 25px;
+    }
 }
 
 @media screen and (max-width: 480px) {
-    
+    .header, .features, .faq {
+        padding: 15px;
+    }
+    .features-left, .features-right {
+        display: inline;
+    }
 }
