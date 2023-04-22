@@ -137,3 +137,17 @@ button {
 #carole-avatar {
     max-height: 75px;
 }
+
+/* Responsiveness */
+
+@media screen and (min-width: 900px) {
+    
+}
+
+@media screen and (max-width: 899px) {
+    
+}
+
+@media screen and (max-width: 480px) {
+    
+}
