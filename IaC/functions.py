@@ -1,5 +1,5 @@
 import boto3
-import botocore
+import botocore.exceptions
 
 s3 = boto3.client('s3')
 s3r = boto3.resource('s3')
@@ -16,7 +16,7 @@ def build_s3(name, path, key):
             }
         )
         s3r.meta.client.upload_file(path, name, key)
-    except botocore.exceptions('ClientError') as err:
+    except botocore.exceptions.ClientError as err:
         print('{}'.format(err.response['Error']['Message']))
     response = s3.list_objects(Bucket = name)
     objects = list(response.items())
@@ -37,7 +37,7 @@ def build_lambda(name, lang, role, code, desc):
             Handler = 'index.send'
         )
         return response.get('FunctionArn')
-    except botocore.exceptions('ClientError') as err:
+    except botocore.exceptions.ClientError as err:
         print('{}'.format(err.response['Error']['Message']))
         response = lamb.get_function(FunctionName = name)
         return response['Configuration']['FunctionArn']
@@ -52,11 +52,11 @@ def build_api(name, target):
             },
             Target = target
         )
-    except botocore.exceptions('ClientError') as err:
+    except botocore.exceptions.ClientError as err:
         print('{}'.format(err.response['Error']['Message']))
 
 def build_ses():
     try:
         ses.create_email(EmailIdentity = 'email')
-    except botocore.exceptions('ClientError') as err:
+    except botocore.exceptions.ClientError as err:
         print('{}'.format(err.response['Error']['Message']))
